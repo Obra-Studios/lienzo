@@ -9,6 +9,8 @@ dist/
 build/*
 !build/lienzo.js
 !build/lienzo.wasm
+# Allow build script
+!scripts/build-vercel.js
 
 # IDE
 .vscode/
