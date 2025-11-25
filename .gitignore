@@ -1,9 +1,14 @@
 # Build artifacts
-build/
+# Note: build/lienzo.js and build/lienzo.wasm are needed for Vercel deployment
 dist/
 *.wasm
 *.js
 *.html
+# Allow WASM files in build/ directory for deployment
+!build/
+build/*
+!build/lienzo.js
+!build/lienzo.wasm
 
 # IDE
 .vscode/
@@ -27,3 +32,4 @@ vendor/
 *.tmp
 *.temp
 
+.vercel

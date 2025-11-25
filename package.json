@@ -4,6 +4,7 @@
     "description": "A high-performance vector design tool built with C++ and WebAssembly",
     "scripts": {
         "build": "make build",
+        "build:vercel": "node scripts/build-vercel.js",
         "clean": "make clean",
         "dev": "python3 -m http.server 8000",
         "serve": "python3 -m http.server 8000"
