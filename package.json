@@ -1,0 +1,20 @@
+{
+    "name": "lienzo",
+    "version": "0.1.0",
+    "description": "A high-performance vector design tool built with C++ and WebAssembly",
+    "scripts": {
+        "build": "make build",
+        "clean": "make clean",
+        "dev": "python3 -m http.server 8000",
+        "serve": "python3 -m http.server 8000"
+    },
+    "keywords": [
+        "vector",
+        "design",
+        "webassembly",
+        "cpp",
+        "graphics"
+    ],
+    "author": "",
+    "license": "UNLICENSED"
+}

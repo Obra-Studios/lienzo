@@ -1,0 +1,225 @@
+/* Lienzo Styling */
+
+/* Color Variables */
+:root {
+    --base-color: #343435;
+    --canvas-color: #1E1E1E;
+    --highlight-color: #3F8AE2;
+    --sidebar-bg: #252526;
+    --border-color: #3e3e42;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #858585;
+    --input-bg: #3c3c3c;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--base-color);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+/* App Layout */
+#app {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebars */
+#left-sidebar,
+#right-sidebar {
+    background: var(--sidebar-bg);
+    border-color: var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+#left-sidebar {
+    width: 280px;
+    border-right: 1px solid var(--border-color);
+}
+
+#right-sidebar {
+    width: 320px;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Canvas Container - Infinite Canvas */
+#canvas-container {
+    flex: 1;
+    background: var(--base-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    background: var(--canvas-color);
+    cursor: crosshair;
+}
+
+/* Sidebar Sections */
+.sidebar-section {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-section h3 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+/* Input Fields */
+#chat-input {
+    width: 100%;
+    padding: 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+#chat-input::placeholder {
+    color: var(--text-muted);
+}
+
+#chat-input:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+/* Status Bar */
+.status-bar {
+    height: 24px;
+    background: var(--highlight-color);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 11px;
+    color: var(--text-primary);
+}
+
+/* Highlight Styles */
+.highlight,
+.selected {
+    color: var(--highlight-color);
+}
+
+.highlight-bg {
+    background-color: var(--highlight-color);
+}
+
+/* Interactive Elements */
+button,
+.button {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+    background: var(--base-color);
+    border-color: var(--highlight-color);
+}
+
+button:active,
+.button:active {
+    background: var(--highlight-color);
+    color: var(--text-primary);
+}
+
+button:focus,
+.button:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sidebar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+}
+
+/* Toolbar */
+#toolbar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.tool-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tool-button:hover {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.tool-button.active {
+    background: var(--highlight-color);
+    border-color: var(--highlight-color);
+    color: var(--text-primary);
+}
+
+.tool-button svg {
+    width: 20px;
+    height: 20px;
+}
+

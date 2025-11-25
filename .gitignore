@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+dist/
+*.wasm
+*.js
+*.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+vendor/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
