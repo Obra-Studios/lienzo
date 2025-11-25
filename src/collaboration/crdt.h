@@ -25,6 +25,10 @@ struct CRDTId {
         return siteId == other.siteId && logicalClock == other.logicalClock;
     }
     
+    bool operator!=(const CRDTId& other) const {
+        return !(*this == other);
+    }
+    
     bool operator<(const CRDTId& other) const {
         if (siteId != other.siteId) {
             return siteId < other.siteId;

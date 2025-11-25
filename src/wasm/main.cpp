@@ -1,11 +1,18 @@
 #include <emscripten.h>
 #include "../core/frame.h"
 #include "../canvas/canvas.h"
+#include "crdt_bindings.h"
 
 using namespace Lienzo;
 
+// Forward declaration
+extern "C" {
+    void* crdt_manager_create(const char* siteId);
+}
+
 extern "C" {
 
+// Legacy functions (kept for compatibility)
 EMSCRIPTEN_KEEPALIVE
 void* create_canvas() {
     return new Canvas();
@@ -27,6 +34,8 @@ void add_frame_to_canvas(void* canvas_ptr, void* frame_ptr) {
 
 int main() {
     // WASM module initialization
+    // Initialize default CRDT manager
+    crdt_manager_create("default");
     return 0;
 }
 

@@ -58,6 +58,7 @@ add_library(lienzo_core STATIC
 if(EMSCRIPTEN)
     add_executable(lienzo
         src/wasm/main.cpp
+        src/wasm/crdt_bindings.cpp
     )
     target_link_libraries(lienzo lienzo_core)
 else()

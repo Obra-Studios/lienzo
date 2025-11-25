@@ -21,7 +21,7 @@ public:
     
     // Sync with CRDT node
     void syncFromCRDTNode(const CRDTNode& node);
-    void syncToCRDTNode(CRDTNode& node) const;
+    void syncToCRDTNode(CRDTNode& node, CRDTDocument& doc) const;
     
     // Property getters/setters that update CRDT
     void setPosition(double x, double y, CRDTDocument& doc);
